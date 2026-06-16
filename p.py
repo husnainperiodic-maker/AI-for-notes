@@ -24,8 +24,9 @@ def id_note():
 
 if "note_id" not in st.session_state:
     st.session_state.note_id=id_note()
-load_dotenv()
-client=Groq(api_key=os.environ.get("GROQ_API_KEY"))
+# Remove load_dotenv()
+# Use Streamlit Secrets
+client = Groq(api_key=st.secrets["GROQ_API_KEY"])
 
 def save(notes, note_id):
     with open("n.txt", "a") as f:
