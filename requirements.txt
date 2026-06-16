@@ -1,0 +1,4 @@
+Groq
+streamlit
+os
+load_dotenv
